@@ -20,13 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sy!=_vl!^5&151*frui2jq%d&u+s)zj3mke0^-#x_qqf3ay#qf'
+SECRET_KEY = 'sy!=_vl!^5&151*frui2jq%d&u+s)zj3mke0^-#x_qqf3ay#=='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['192.168.56.110']
 
 # Application definition
 
@@ -118,3 +117,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#no arquivo local_settings.py, colocar as configurações que não devem ir para o git
+try:
+    from local_settings import *
+except ImportError:
+    pass
